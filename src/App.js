@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import Dish from "./components/Dish";
 
 function App() {
+  const [dishes, setDishes] = useState([]);
+
   useEffect(() => {
     fetch(process.env.REACT_APP_API_URL)
       .then((resposta) => resposta.json())
       .then((dados) => {
-        console.log(dados);
+        setDishes(dados);
       });
   }, []);
 
@@ -18,6 +21,18 @@ function App() {
       <div className="logo-container">
         <img src="/images/logo.png" alt="pizzarriba logo" />
       </div>
+
+      <section className="dishes">
+        {dishes.map((dish) => (
+          <Dish
+            key={dish.id}
+            name={dish.name}
+            description={dish.description}
+            image={dish.image}
+            price={dish.price}
+          />
+        ))}
+      </section>
     </div>
   );
 }
