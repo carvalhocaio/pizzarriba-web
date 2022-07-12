@@ -1,17 +1,21 @@
+import "./Dish.css";
+
 const Dish = ({ name, description, image, price }) => {
   return (
-    <div>
-      <div>
+    <div className="dish">
+      <div className="image-container">
         <img src={image} alt={description} />
       </div>
 
-      <p>
-        <strong>{name}</strong>
-      </p>
-      <p>{description}</p>
-      <p>
-        US$ <strong>{price}</strong>
-      </p>
+      <div className="content">
+        <p className="dish-name">
+          <strong>{name}</strong>
+        </p>
+        <p className="dish-description">{description}</p>
+        <p className="dish-price">
+          US$ <strong>{price}</strong>
+        </p>
+      </div>
     </div>
   );
 };

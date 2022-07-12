@@ -1,0 +1,17 @@
+.dish {
+  width: 280px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  margin: 8px;
+}
+
+.image-container img {
+  max-width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dish .content {
+  padding: 8px;
+}
